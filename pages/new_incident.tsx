@@ -238,11 +238,12 @@ export default function Handler({username, abteilungen, mitarbeiter, prioritäte
             body: JSON.stringify(data),
             redirect: 'follow'
           };
-          
+          /*
         await fetch("https://ticketsystem.izanami.dev/api/new_incident", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+        */
     }
     return(
         <Box backgroundColor="#333">
