@@ -17,7 +17,7 @@ export default function Handler(){
         event.preventDefault();
         console.log(username)
         console.log(password)
-        router.push(`/dashboard?username=${username}`)
+        router.push(`https://ticketsystem.izanami.dev/dashboard?username=${username}`)
     }
     const updateUser = async event => {
         event.preventDefault();
