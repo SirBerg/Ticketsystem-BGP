@@ -37,6 +37,7 @@ function runMiddleware(req, res, fn) {
     })
   })
 }
+
 export default async function Handler(req, res){
     await runMiddleware(req, res, cors)
     if(req.method == "POST"){
@@ -54,6 +55,7 @@ export default async function Handler(req, res){
             database : 'Ticketsystem',
             connectionLimit: 5
         }
+
         //fetching the mitarbeiter from db
         //@ts-ignore
         body = await JSON.parse(body)

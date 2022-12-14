@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
             redirect: 'follow'
           };
           let return_var:any
-          await fetch(`https://ticketsystem.izanami.dev/api/mitarbeiter${abteilung_id}`, requestOptions)
+          await fetch(`http://localhost:3000/api/mitarbeiter${abteilung_id}`, requestOptions)
             .then(response => response.text())
             .then(result =>return_var = result )
             .catch(error => console.log('error', error));
@@ -38,7 +38,7 @@ export async function getServerSideProps(context) {
             redirect: 'follow'
           };
         let return_var:any
-        await fetch("https://ticketsystem.izanami.dev/api/abteilung", requestOptions)
+        await fetch("http://localhost:3000/api/abteilung", requestOptions)
             .then(response => response.text())
             .then(result => return_var = JSON.parse(result) )
             .catch(error => console.log('error', error));
@@ -56,7 +56,7 @@ export async function getServerSideProps(context) {
             redirect: 'follow'
         };
         
-        await fetch(`https://ticketsystem.izanami.dev/api/ticket?id=${id}`, requestOptions)
+        await fetch(`http://localhost:3000/api/ticket?id=${id}`, requestOptions)
             .then(response => response.text())
             .then(result => return_var = JSON.parse(result))
             .catch(error => console.log('error', error));
@@ -304,7 +304,7 @@ export default function Handler({username, abteilungen, mitarbeiter, prioritäte
             redirect: 'follow'
           };
           
-        await fetch(`https://ticketsystem.izanami.dev/api/edit?id=${incident.Incident_ID}`, requestOptions)
+        await fetch(`http://localhost:3000/api/edit?id=${incident.Incident_ID}`, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

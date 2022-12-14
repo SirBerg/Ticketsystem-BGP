@@ -17,6 +17,7 @@ import {Select} from '@chakra-ui/react'
 import {Grid, GridItem} from '@chakra-ui/react'
 import {requestObject} from './api/new_incident'
 import Link from 'next/link'
+import sleep from "sleep-promise";
 
 export async function getServerSideProps(context){
     const conf = require('../conf.js')
@@ -26,11 +27,12 @@ export async function getServerSideProps(context){
       };
     
       let ticket_obj:requestObject
-      await fetch("https://ticketsystem.izanami.dev/api/ticket?id="+context.query.id, requestOptions)
+      await fetch("http://localhost:3000/api/ticket?id="+context.query.id, requestOptions)
         .then(response => response.text())
-        .then(result => ticket_obj = JSON.parse(result))
+        .then((result) => {ticket_obj = JSON.parse(result); console.log('TICKET OBJECT:', ticket_obj)})
         .catch(error => console.log('error', error));
     let is_edit = context.query.is_edit
+    await sleep(1000)
     if(is_edit){
         is_edit = true
     }
@@ -42,6 +44,7 @@ export async function getServerSideProps(context){
     if(!username){
         username = "anonym"
     }
+    console.log(ticket_obj)
     return {props: {
         "ticket_id": context.query.id,
         "ticket_obj": ticket_obj[0],

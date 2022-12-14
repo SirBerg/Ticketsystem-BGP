@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticketsystem</title>
+
+    <style>
+        body{
+            background-color: #540804;
+            color:#C7E8F3;
+            height: 100%;
+            font-family: Sans-Serif;
+        }
+
+        .content{
+            margin: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #C75146;
+        }
+
+        .inner-content{
+            margin: 10px;
+        }
+
+        .center-text{
+            text-align: center;
+        }
+
+        .container-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .oneLine-input{
+            border-width: 1px;
+            border-color: #540804;
+            border-radius: 5px;
+            background-color: #C75146;
+            height: 20px;
+            min-width: 200px;
+            width: 20vw;
+            color:white;
+            padding: 4px 10px;
+        }
+
+        .textAreaInput{
+            border-width: 1px;
+            border-color: #540804;
+            border-radius: 5px;
+            background-color: #C75146;
+            height: 10vh;
+            min-width: 200px;
+            min-height: 150px;
+            width: 20vw;
+        }
+
+        .category{
+
+        }
+
+        footer{
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            background-color: #540804;
+            color: #C7E8F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-text">
+        <h1>Neues Ticket</h1>
+    </div>
+    <div
+        id="content"
+        class="content"
+    >
+        <div class="inner-content container-grid">
+            <div class="center-text">
+                <h1>Kontaktinformationen</h1>
+                <h4 style="margin-bottom: 5px">Name</h4>
+                <input class="oneLine-input"/>
+                <h4 style="margin-bottom: 5px">E-Mail</h4>
+                <input class="oneLine-input" type="email"/>
+                <h4 style="margin-bottom: 5px">Telefonnummer</h4>
+                <input class="oneLine-input" type="tel"/>
+                <h1>Priorisierung</h1>
+                <h4>Auswirkung</h4>
+                <select>
+                    <option>
+                        Ganzes Unternehmen
+                    </option>
+                    <option>
+                        Mehrere Abteilungen
+                    </option>
+                    <option>
+                        Einzelne Abteilung
+                    </option>
+                    <option>
+                        Mehrere Mitarbeiter
+                    </option>
+                    <option>
+                        Einzelner Mitarbeiter
+                    </option>
+
+                </select>
+            </div>
+            <div class="center-text">
+                <h1>Ticket Informationen</h1>
+                <h4 style="margin-bottom:5px">Kurzbeschreibung</h4>
+                <input type="text" class="oneLine-input">
+                <h4 style="margin-bottom:5px">Beschreibung</h4>
+                <textarea rows="10" class="textAreaInput"></textarea>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© Yeah</p>
+    </footer>
+</body>
+</html>

@@ -36,6 +36,7 @@ export default async function Handler(req, res){
     try{
         const conn = await mariadb.createConnection(pool)
         let mitarbeiter = await conn.query(query)
+        console.log(mitarbeiter, 'THIS IS MITARBEITER')
         res.status(200).json(mitarbeiter)
         await conn.end()
     }
